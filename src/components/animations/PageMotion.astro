@@ -1,0 +1,134 @@
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initScrollAnimations = () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      document.querySelectorAll("[data-reveal], [data-reveal-child], [data-reveal-scale]").forEach((el) => {
+        (el as HTMLElement).style.visibility = "visible";
+        (el as HTMLElement).style.opacity = "1";
+        (el as HTMLElement).style.transform = "none";
+      });
+      return;
+    }
+
+    /* ─── Fade-up reveals (individual elements) ─── */
+    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
+      gsap.set(el, { autoAlpha: 0, y: 32 });
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 92%",
+        end: "bottom -20%",
+        onEnter: () => {
+          gsap.to(el, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power3.out", overwrite: true });
+        },
+        onEnterBack: () => {
+          gsap.to(el, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power3.out", overwrite: true });
+        },
+        onLeave: () => {
+          gsap.to(el, { autoAlpha: 0, y: -16, duration: 0.6, ease: "power2.in", overwrite: true });
+        },
+        onLeaveBack: () => {
+          gsap.to(el, { autoAlpha: 0, y: 32, duration: 0.6, ease: "power2.in", overwrite: true });
+        },
+      });
+    });
+
+    /* ─── Staggered children reveals (cards, grid items) ─── */
+    document.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((container) => {
+      const children = container.querySelectorAll<HTMLElement>("[data-reveal-child]");
+      if (!children.length) return;
+
+      gsap.set(children, { autoAlpha: 0, y: 40, scale: 0.97 });
+
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top 92%",
+        end: "bottom -20%",
+        onEnter: () => {
+          gsap.to(children, {
+            autoAlpha: 1, y: 0, scale: 1,
+            duration: 0.7, ease: "power3.out", stagger: 0.1, overwrite: true,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(children, {
+            autoAlpha: 1, y: 0, scale: 1,
+            duration: 0.7, ease: "power3.out", stagger: 0.1, overwrite: true,
+          });
+        },
+        onLeave: () => {
+          gsap.to(children, {
+            autoAlpha: 0, y: -16, scale: 0.97,
+            duration: 0.5, ease: "power2.in", stagger: 0.04, overwrite: true,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(children, {
+            autoAlpha: 0, y: 40, scale: 0.97,
+            duration: 0.5, ease: "power2.in", stagger: 0.04, overwrite: true,
+          });
+        },
+      });
+    });
+
+    /* ─── Scale-in reveals (stats, pricing cards) ─── */
+    document.querySelectorAll<HTMLElement>("[data-reveal-scale]").forEach((el) => {
+      gsap.set(el, { autoAlpha: 0, scale: 0.9 });
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 92%",
+        end: "bottom -20%",
+        onEnter: () => {
+          gsap.to(el, { autoAlpha: 1, scale: 1, duration: 0.7, ease: "back.out(1.4)", overwrite: true });
+        },
+        onEnterBack: () => {
+          gsap.to(el, { autoAlpha: 1, scale: 1, duration: 0.7, ease: "back.out(1.4)", overwrite: true });
+        },
+        onLeave: () => {
+          gsap.to(el, { autoAlpha: 0, scale: 0.95, duration: 0.5, ease: "power2.in", overwrite: true });
+        },
+        onLeaveBack: () => {
+          gsap.to(el, { autoAlpha: 0, scale: 0.9, duration: 0.5, ease: "power2.in", overwrite: true });
+        },
+      });
+    });
+
+    /* ─── Line draw reveals ─── */
+    document.querySelectorAll<SVGPathElement>("[data-reveal-line]").forEach((line) => {
+      const length = line.getTotalLength();
+      gsap.set(line, { strokeDasharray: length, strokeDashoffset: length });
+
+      ScrollTrigger.create({
+        trigger: line,
+        start: "top 90%",
+        end: "bottom -20%",
+        onEnter: () => {
+          gsap.to(line, { strokeDashoffset: 0, duration: 1, ease: "power2.out", overwrite: true });
+        },
+        onEnterBack: () => {
+          gsap.to(line, { strokeDashoffset: 0, duration: 1, ease: "power2.out", overwrite: true });
+        },
+        onLeave: () => {
+          gsap.to(line, { strokeDashoffset: length, duration: 0.6, ease: "power2.in", overwrite: true });
+        },
+        onLeaveBack: () => {
+          gsap.to(line, { strokeDashoffset: length, duration: 0.6, ease: "power2.in", overwrite: true });
+        },
+      });
+    });
+
+    ScrollTrigger.refresh();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initScrollAnimations, { once: true });
+  } else {
+    initScrollAnimations();
+  }
+</script>

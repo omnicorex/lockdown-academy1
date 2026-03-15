@@ -1,0 +1,141 @@
+<script>
+  import gsap from "gsap";
+
+  const initHeroMotion = () => {
+    const hero = document.querySelector(".hero-shell");
+    if (!(hero instanceof HTMLElement)) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const bgLayers = hero.querySelectorAll('[data-hero-layer="background"], [data-hero-bg]');
+    const overlayLayers = hero.querySelectorAll('[data-hero-layer="overlay"], [data-hero-overlay]');
+    const playerLayer = hero.querySelector('[data-hero-layer="player"], [data-hero-player]');
+    const textItems = hero.querySelectorAll("[data-hero-text]");
+    const cta = hero.querySelector("[data-hero-cta]");
+    const playLines = hero.querySelectorAll("[data-play-line]");
+    const heatDots = hero.querySelectorAll("[data-heat-dot]");
+    const trackingRings = hero.querySelectorAll("[data-tracking-ring]");
+    const hudPlanes = hero.querySelectorAll("[data-hud-plane]");
+
+    const setLineState = () => {
+      playLines.forEach((line) => {
+        if (!(line instanceof SVGPathElement)) return;
+        const length = line.getTotalLength();
+        line.style.strokeDasharray = `${length}`;
+        line.style.strokeDashoffset = `${length}`;
+      });
+    };
+
+    const ctx = gsap.context(() => {
+      gsap.set(bgLayers, { autoAlpha: 0 });
+      gsap.set(overlayLayers, { autoAlpha: 0, y: 18 });
+      gsap.set(playerLayer, { autoAlpha: 0, scale: 0.92, y: 26, transformOrigin: "50% 82%" });
+      gsap.set(textItems, { autoAlpha: 0, y: 34 });
+      gsap.set(cta, { autoAlpha: 0, y: 28 });
+      gsap.set(heatDots, { transformOrigin: "50% 50%" });
+      gsap.set(trackingRings, { transformOrigin: "50% 50%" });
+      gsap.set(hudPlanes, { autoAlpha: 0, scale: 0.88, transformOrigin: "50% 50%" });
+      setLineState();
+
+      if (reduceMotion) {
+        gsap.set([bgLayers, overlayLayers, playerLayer, textItems, cta, hudPlanes], {
+          autoAlpha: 1,
+          clearProps: "all"
+        });
+        gsap.set(playLines, { strokeDashoffset: 0 });
+        return;
+      }
+
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.to(bgLayers, {
+        autoAlpha: 1,
+        duration: 0.28,
+        stagger: 0.05
+      })
+        .to(
+          playerLayer,
+          {
+            autoAlpha: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.34
+          },
+          "-=0.03"
+        )
+        .to(
+          textItems,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.26,
+            stagger: 0.05
+          },
+          "-=0.16"
+        )
+        .to(
+          overlayLayers,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.22,
+            stagger: 0.03
+          },
+          "-=0.18"
+        )
+        .to(
+          hudPlanes,
+          {
+            autoAlpha: 1,
+            scale: 1,
+            duration: 0.2,
+            stagger: 0.04
+          },
+          "-=0.16"
+        )
+        .to(
+          playLines,
+          {
+            strokeDashoffset: 0,
+            duration: 0.26,
+            stagger: 0.04,
+            ease: "power2.out"
+          },
+          "-=0.12"
+        )
+        .fromTo(
+          trackingRings,
+          { scale: 0.82, autoAlpha: 0.3 },
+          {
+            scale: 1,
+            autoAlpha: 1,
+            duration: 0.18,
+            stagger: 0.03
+          },
+          "-=0.12"
+        )
+        .to(
+          cta,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.16
+          },
+          "-=0.04"
+        );
+    }, hero);
+
+    window.addEventListener(
+      "pagehide",
+      () => {
+        ctx.revert();
+      },
+      { once: true }
+    );
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHeroMotion, { once: true });
+  } else {
+    initHeroMotion();
+  }
+</script>

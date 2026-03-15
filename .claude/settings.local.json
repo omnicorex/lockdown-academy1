@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where node:*)",
+      "Bash(where npm:*)",
+      "Bash(node -e \"const { spawn } = require\\(''child_process''\\); const p = spawn\\(''C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\npx.cmd'', [''astro'', ''dev''], {stdio:''pipe'', shell:true}\\); p.stdout.on\\(''data'',d=>console.log\\(d.toString\\(\\)\\)\\); p.stderr.on\\(''data'',d=>console.error\\(d.toString\\(\\)\\)\\); setTimeout\\(\\(\\)=>{p.kill\\(\\);process.exit\\(\\)},5000\\)\")",
+      "Bash(ls C:/MyDev/lockdown-academy1/node_modules/.bin/astro*)",
+      "Bash(node -e \"console.log\\(require.resolve\\(''astro''\\)\\)\")",
+      "Bash(node -e \"const p=require\\(''path''\\); console.log\\(p.resolve\\(''node_modules/astro/package.json''\\)\\)\")",
+      "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(0,''''utf8''''\\);const p=JSON.parse\\(d\\);console.log\\(p.bin\\)\")"
+    ]
+  }
+}

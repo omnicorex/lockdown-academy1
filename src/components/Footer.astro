@@ -1,0 +1,73 @@
+---
+import { brandingConfig } from "../config/branding";
+import Logo from "./Logo.astro";
+---
+
+<footer class="border-t border-white/[0.06] bg-page">
+  <!-- Main footer content -->
+  <div class="shell py-16 md:py-20">
+    <div class="grid gap-12 md:grid-cols-[1fr_auto] md:gap-16 lg:grid-cols-[1.2fr_1fr_1fr]">
+
+      <!-- Column 1: Lockdown Academy — prominent -->
+      <div class="flex flex-col gap-5">
+        <a href="/" class="flex items-center gap-3" style="font-family: var(--font-display);">
+          <Logo size={42} />
+          <div class="flex flex-col">
+            <span class="text-2xl leading-none tracking-[0.06em] text-white">LOCKDOWN</span>
+            <span class="text-sm leading-none tracking-[0.14em] text-highlight-warm/50">ACADEMY</span>
+          </div>
+        </a>
+        <p class="max-w-xs text-[0.8rem] leading-relaxed text-white/30" style="font-family: var(--font-body);">
+          Elite defensive intelligence system. Championship-caliber training powered by next-generation performance technology.
+        </p>
+        <div class="mt-1 flex items-center gap-6">
+          <a href="#authority" class="text-[0.68rem] font-500 uppercase tracking-[0.15em] text-white/25 transition-colors hover:text-white/55" style="font-family: var(--font-body);">About</a>
+          <a href="#pricing" class="text-[0.68rem] font-500 uppercase tracking-[0.15em] text-white/25 transition-colors hover:text-white/55" style="font-family: var(--font-body);">Pricing</a>
+          <a href="mailto:{brandingConfig.contactEmail}" class="text-[0.68rem] font-500 uppercase tracking-[0.15em] text-white/25 transition-colors hover:text-white/55" style="font-family: var(--font-body);">Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Parent company -->
+      <div class="flex flex-col gap-4">
+        <p class="text-[0.6rem] font-500 uppercase tracking-[0.25em] text-white/20" style="font-family: var(--font-mono);">A portfolio of</p>
+        <div class="flex items-center gap-3">
+          <!-- Artest Management Group logo placeholder -->
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03]">
+            <img src="/logo-amg.svg" alt="Artest Management Group" width="22" height="22" class="opacity-40" />
+          </div>
+          <div>
+            <span class="block text-[0.82rem] font-600 tracking-[0.02em] text-white/45" style="font-family: var(--font-body);">Artest Management</span>
+            <span class="block text-[0.82rem] font-600 tracking-[0.02em] text-white/45" style="font-family: var(--font-body);">Group</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Built by -->
+      <div class="flex flex-col gap-4">
+        <p class="text-[0.6rem] font-500 uppercase tracking-[0.25em] text-white/20" style="font-family: var(--font-mono);">Designed & built by</p>
+        <div class="flex items-center gap-3">
+          <!-- Omnicorex logo placeholder -->
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03]">
+            <img src="/logo-omnicorex.svg" alt="Omnicorex" width="22" height="22" class="opacity-40" />
+          </div>
+          <span class="text-[0.82rem] font-600 tracking-[0.02em] text-white/45" style="font-family: var(--font-body);">Omnicorex</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/[0.04]">
+    <div class="shell flex flex-col items-center justify-between gap-3 py-6 sm:flex-row">
+      <p class="text-[0.62rem] tracking-wide text-white/15" style="font-family: var(--font-body);">
+        &copy; 2026 {brandingConfig.siteName}. All rights reserved.
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-[0.62rem] tracking-wide text-white/15 transition-colors hover:text-white/35" style="font-family: var(--font-body);">Privacy</a>
+        <span class="text-white/10">|</span>
+        <a href="#" class="text-[0.62rem] tracking-wide text-white/15 transition-colors hover:text-white/35" style="font-family: var(--font-body);">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>

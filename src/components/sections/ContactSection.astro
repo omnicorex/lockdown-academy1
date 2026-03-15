@@ -1,0 +1,23 @@
+---
+import { brandingConfig } from "../../config/branding";
+---
+
+<section id="contact" class="shell py-16 md:py-24">
+  <div
+    data-reveal
+    class="rounded-[2.5rem] border border-accent/20 bg-gradient-to-br from-accent/12 via-panel to-highlight/10 p-8 md:p-12"
+  >
+    <p class="eyebrow">Next step</p>
+    <h2 class="section-title mt-4 max-w-3xl">Use this foundation to build the actual landing experience.</h2>
+    <p class="mt-4 max-w-2xl text-base leading-7 text-muted">
+      Replace the placeholder content with your course offer, proof, and funnel copy. The app
+      structure is ready for additional routes, shared components, and richer animation sequences.
+    </p>
+    <a
+      class="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-accent"
+      href={`mailto:${brandingConfig.contactEmail}`}
+    >
+      {brandingConfig.contactEmail}
+    </a>
+  </div>
+</section>

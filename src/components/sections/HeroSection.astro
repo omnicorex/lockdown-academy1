@@ -1,0 +1,469 @@
+---
+import HeroMotion from "../animations/HeroMotion.astro";
+---
+
+<section class="hero-shell relative min-h-screen overflow-hidden lg:h-screen">
+  <HeroMotion />
+
+  <div
+    data-hero-layer="background"
+    class="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_24%,rgba(56,189,248,0.18),transparent_24%),radial-gradient(circle_at_76%_42%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_20%_20%,rgba(249,115,22,0.12),transparent_22%),linear-gradient(145deg,#01030a_0%,#081121_46%,#02050d_100%)]"
+  ></div>
+  <div
+    data-hero-bg
+    data-hero-layer="background"
+    class="pointer-events-none absolute right-[6%] top-[10%] h-[22rem] w-[22rem] rounded-full bg-accent/18 blur-[120px] md:h-[28rem] md:w-[28rem]"
+  ></div>
+  <div
+    data-hero-bg
+    data-hero-layer="background"
+    class="pointer-events-none absolute bottom-[8%] left-[10%] h-[18rem] w-[18rem] rounded-full bg-highlight/10 blur-[110px] md:h-[22rem] md:w-[22rem]"
+  ></div>
+
+  <div class="shell relative flex min-h-screen items-center pt-20 pb-6 md:pt-24 md:pb-10 lg:h-full lg:min-h-0">
+    <div class="grid w-full gap-14 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+      <div class="hero-text-block">
+        <!-- Eyebrow — glassy futuristic badge -->
+        <div data-hero-text class="mb-8 md:mb-10">
+          <span class="glass-badge inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/[0.06] px-5 py-2 backdrop-blur-md">
+            <span class="h-1.5 w-1.5 rounded-full bg-highlight shadow-[0_0_8px_rgba(249,115,22,0.6)]"></span>
+            <span class="text-[0.65rem] font-600 uppercase tracking-[0.3em] text-accent/90" style="font-family: var(--font-body);">
+              Defensive Intelligence System
+            </span>
+          </span>
+        </div>
+
+        <!-- Headline — single line LOCKDOWN + ACADEMY -->
+        <div class="mb-6 md:mb-8">
+          <h1
+            data-hero-text
+            class="hero-headline"
+            style="font-family: var(--font-display);"
+          >
+            <span class="hero-title-main block text-[clamp(3.8rem,10vw,7.2rem)] leading-[0.95] tracking-[0.04em]">
+              LOCKDOWN
+            </span>
+            <span class="hero-title-sub block text-[clamp(2.2rem,5.8vw,4.2rem)] leading-[1] tracking-[0.12em] text-highlight-warm/40">
+              ACADEMY
+            </span>
+          </h1>
+        </div>
+
+        <!-- Body copy -->
+        <p
+          data-hero-text
+          class="mb-8 max-w-md text-[0.95rem] font-300 leading-[1.7] tracking-[0.01em] text-white/50 md:mb-10 md:text-base"
+        >
+          Championship defensive mastery inspired by
+          <span class="whitespace-nowrap font-700 text-highlight-warm">Metta World Peace</span>, one of the most feared defenders in basketball history and widely considered one of the greatest to ever do it, powered by next-generation performance technology.
+        </p>
+
+        <!-- CTAs — rounded futuristic -->
+        <div data-hero-cta class="mb-10 flex flex-wrap items-center gap-3 md:mb-14">
+          <a
+            class="hero-cta-primary group relative inline-flex w-fit items-center gap-2.5 overflow-hidden rounded-full border border-accent/30 bg-gradient-to-r from-accent to-accent-strong px-8 py-3.5 text-[0.74rem] font-800 uppercase tracking-[0.2em] text-slate-950 transition-all duration-300"
+            href="#curriculum"
+            style="font-family: var(--font-body);"
+          >
+            <span class="relative z-10 flex items-center gap-2.5">
+              Enter the system
+              <svg class="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2.5">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+            <span class="hero-cta-shine pointer-events-none absolute inset-0"></span>
+          </a>
+          <a
+            class="glass-badge inline-flex w-fit items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.06] px-8 py-3.5 text-[0.72rem] font-700 uppercase tracking-[0.2em] text-white/70 backdrop-blur-md transition-all duration-300 hover:border-accent/30 hover:bg-accent/[0.08] hover:text-white/90 hover:shadow-[0_0_24px_rgba(125,211,252,0.12)]"
+            href="#contact"
+            style="font-family: var(--font-body);"
+          >
+            Film breakdowns
+          </a>
+        </div>
+
+        <!-- Mobile HUD panels — 3 boxes in a row, no clipboard/lines -->
+        <div data-hero-text class="mt-10 flex justify-center gap-2 sm:gap-4 lg:hidden">
+          <!-- Radar -->
+          <svg viewBox="-78 -78 156 156" class="h-24 w-24 sm:h-32 sm:w-32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <filter id="hudGlowM">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <circle cx="0" cy="0" r="54" fill="none" stroke="rgba(125,211,252,0.12)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="36" fill="none" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="18" fill="none" stroke="rgba(125,211,252,0.18)" stroke-width="0.8" />
+            <line x1="-54" y1="0" x2="54" y2="0" stroke="rgba(125,211,252,0.1)" stroke-width="0.6" />
+            <line x1="0" y1="-54" x2="0" y2="54" stroke="rgba(125,211,252,0.1)" stroke-width="0.6" />
+            <path class="hud-radar-sweep" d="M0 0 L0 -54 A54 54 0 0 1 38 -38 Z" fill="rgba(125,211,252,0.12)" />
+            <circle cx="-18" cy="-24" r="3" fill="#7dd3fc" opacity="0.8" />
+            <circle cx="28" cy="12" r="2.5" fill="#f97316" opacity="0.9" />
+            <circle cx="-8" cy="32" r="2" fill="#7dd3fc" opacity="0.5" />
+            <circle cx="22" cy="-30" r="2" fill="#7dd3fc" opacity="0.6" />
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </svg>
+
+          <!-- EQ Bars -->
+          <svg viewBox="-78 -78 156 156" class="h-24 w-24 sm:h-32 sm:w-32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <g filter="url(#hudGlowM)">
+              <g class="eq-bar eq-bar-1" style="transform-origin:-48px 46px"><rect x="-52" y="10" width="8" height="36" rx="2" fill="rgba(125,211,252,0.5)" /></g>
+              <g class="eq-bar eq-bar-2" style="transform-origin:-34px 46px"><rect x="-38" y="-8" width="8" height="54" rx="2" fill="rgba(125,211,252,0.6)" /></g>
+              <g class="eq-bar eq-bar-3" style="transform-origin:-20px 46px"><rect x="-24" y="-26" width="8" height="72" rx="2" fill="#7dd3fc" opacity="0.75" /></g>
+              <g class="eq-bar eq-bar-4" style="transform-origin:-6px 46px"><rect x="-10" y="-42" width="8" height="88" rx="2" fill="#7dd3fc" opacity="0.9" /></g>
+              <g class="eq-bar eq-bar-5" style="transform-origin:8px 46px"><rect x="4" y="-34" width="8" height="80" rx="2" fill="#7dd3fc" opacity="0.8" /></g>
+              <g class="eq-bar eq-bar-6" style="transform-origin:22px 46px"><rect x="18" y="-18" width="8" height="64" rx="2" fill="rgba(125,211,252,0.65)" /></g>
+              <g class="eq-bar eq-bar-7" style="transform-origin:36px 46px"><rect x="32" y="2" width="8" height="44" rx="2" fill="rgba(125,211,252,0.55)" /></g>
+              <g class="eq-bar eq-bar-8" style="transform-origin:50px 46px"><rect x="46" y="16" width="8" height="30" rx="2" fill="rgba(125,211,252,0.4)" /></g>
+            </g>
+            <line x1="-56" y1="-20" x2="58" y2="-20" stroke="rgba(249,115,22,0.5)" stroke-width="1" stroke-dasharray="6 4" />
+            <line x1="-56" y1="46" x2="58" y2="46" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+            <line x1="-56" y1="10" x2="58" y2="10" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </svg>
+
+          <!-- Targeting Reticle -->
+          <svg viewBox="-78 -78 156 156" class="h-24 w-24 sm:h-32 sm:w-32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <polygon class="reticle-outer" points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="none" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <polygon class="reticle-inner" points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="none" stroke="rgba(125,211,252,0.3)" stroke-width="1" />
+            <polygon class="reticle-diamond" points="0,-16 16,0 0,16 -16,0" fill="rgba(249,115,22,0.15)" stroke="rgba(249,115,22,0.6)" stroke-width="1.2" />
+            <g class="reticle-ticks" stroke="rgba(125,211,252,0.35)" stroke-width="1">
+              <line x1="0" y1="-54" x2="0" y2="-46" />
+              <line x1="0" y1="46" x2="0" y2="54" />
+              <line x1="-54" y1="0" x2="-46" y2="0" />
+              <line x1="46" y1="0" x2="54" y2="0" />
+            </g>
+            <line x1="-40" y1="-40" x2="-28" y2="-28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="40" y1="-40" x2="28" y2="-28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="-40" y1="40" x2="-28" y2="28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="40" y1="40" x2="28" y2="28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <circle class="reticle-dot" cx="0" cy="0" r="3" fill="#f97316" opacity="0.9" />
+            <circle class="reticle-halo" cx="0" cy="0" r="6" fill="none" stroke="rgba(249,115,22,0.4)" stroke-width="0.8" />
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Hero feature graphic: Clipboard → Fan-out → HUD panels (desktop only) -->
+      <div data-hero-overlay class="relative mx-auto hidden w-full max-w-[36rem] lg:block">
+        <svg
+          viewBox="0 0 600 700"
+          class="h-full w-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="fanLine" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.15" />
+            </linearGradient>
+            <filter id="glowFilter">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <filter id="hudGlow">
+              <feGaussianBlur stdDeviation="2.5" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+
+          <!-- ═══ CLIPBOARD (bottom) ═══ -->
+          <!-- Clipboard body -->
+          <rect x="120" y="490" width="360" height="190" rx="14" fill="#0a1628" stroke="rgba(125,211,252,0.18)" stroke-width="1.5" />
+          <!-- Clipboard clip at top -->
+          <rect x="255" y="480" width="90" height="20" rx="4" fill="#0f1d36" stroke="rgba(125,211,252,0.25)" stroke-width="1" />
+          <!-- Court lines -->
+          <rect x="145" y="515" width="310" height="145" rx="4" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+          <line x1="300" y1="515" x2="300" y2="660" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+          <circle cx="300" cy="588" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+          <!-- Three-point arc -->
+          <path d="M170 660 Q170 560 300 540 Q430 560 430 660" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+          <!-- Key/paint area -->
+          <rect x="250" y="610" width="100" height="50" rx="2" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+          <!-- O markers (offense) -->
+          <circle cx="220" cy="570" r="11" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+          <circle cx="380" cy="565" r="11" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+          <circle cx="300" cy="625" r="11" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+          <circle cx="190" cy="640" r="11" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+          <circle cx="410" cy="640" r="11" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+
+          <!-- X markers (defense) — dimmed -->
+          <g stroke="rgba(249,115,22,0.3)" stroke-width="2.5" stroke-linecap="round">
+            <line x1="198" y1="548" x2="212" y2="562" /><line x1="212" y1="548" x2="198" y2="562" />
+            <line x1="358" y1="543" x2="372" y2="557" /><line x1="372" y1="543" x2="358" y2="557" />
+            <line x1="168" y1="618" x2="182" y2="632" /><line x1="182" y1="618" x2="168" y2="632" />
+            <line x1="388" y1="618" x2="402" y2="632" /><line x1="402" y1="618" x2="388" y2="632" />
+          </g>
+
+          <!-- ★ GLOWING X (the featured defender) -->
+          <g filter="url(#glowFilter)">
+            <line x1="278" y1="598" x2="298" y2="618" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
+            <line x1="298" y1="598" x2="278" y2="618" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
+          </g>
+          <!-- Extra glow halo -->
+          <circle cx="288" cy="608" r="18" fill="none" stroke="rgba(249,115,22,0.25)" stroke-width="1" />
+          <circle cx="288" cy="608" r="24" fill="none" stroke="rgba(249,115,22,0.10)" stroke-width="0.8" />
+
+          <!-- Movement arrows on clipboard -->
+          <path d="M220 568 Q240 548 260 555" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="none" />
+          <path d="M380 563 Q360 540 340 548" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" stroke-dasharray="4 3" />
+
+          <!-- ═══ FAN-OUT LINES from glowing X ═══ -->
+          <path data-play-line d="M288 596 C288 520 140 440 140 360" stroke="url(#fanLine)" stroke-width="1.8" stroke-linecap="round" />
+          <path data-play-line d="M288 596 C288 480 300 420 300 340" stroke="url(#fanLine)" stroke-width="1.8" stroke-linecap="round" />
+          <path data-play-line d="M288 596 C288 520 460 440 460 360" stroke="url(#fanLine)" stroke-width="1.8" stroke-linecap="round" />
+
+          <!-- Connection dots at endpoints -->
+          <circle cx="140" cy="360" r="3.5" fill="#7dd3fc" opacity="0.7" />
+          <circle cx="300" cy="340" r="3.5" fill="#7dd3fc" opacity="0.7" />
+          <circle cx="460" cy="360" r="3.5" fill="#7dd3fc" opacity="0.7" />
+
+          <!-- ═══ HUD PANEL 1 (left) — Radar scope ═══ -->
+          <g data-hud-plane transform="translate(140, 240)">
+            <!-- Panel frame -->
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <!-- Radar circles -->
+            <circle cx="0" cy="0" r="54" fill="none" stroke="rgba(125,211,252,0.12)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="36" fill="none" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="18" fill="none" stroke="rgba(125,211,252,0.18)" stroke-width="0.8" />
+            <!-- Crosshairs -->
+            <line x1="-54" y1="0" x2="54" y2="0" stroke="rgba(125,211,252,0.1)" stroke-width="0.6" />
+            <line x1="0" y1="-54" x2="0" y2="54" stroke="rgba(125,211,252,0.1)" stroke-width="0.6" />
+            <!-- Radar sweep -->
+            <path class="hud-radar-sweep" d="M0 0 L0 -54 A54 54 0 0 1 38 -38 Z" fill="rgba(125,211,252,0.12)" />
+            <!-- Blips -->
+            <circle cx="-18" cy="-24" r="3" fill="#7dd3fc" opacity="0.8" />
+            <circle cx="28" cy="12" r="2.5" fill="#f97316" opacity="0.9" />
+            <circle cx="-8" cy="32" r="2" fill="#7dd3fc" opacity="0.5" />
+            <circle cx="22" cy="-30" r="2" fill="#7dd3fc" opacity="0.6" />
+            <!-- Corner brackets -->
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </g>
+
+          <!-- ═══ HUD PANEL 2 (center) — Signal bars / waveform ═══ -->
+          <g data-hud-plane transform="translate(300, 220)">
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <!-- Waveform / EQ bars — each anchored to baseline y=46 -->
+            <g filter="url(#hudGlow)">
+              <g class="eq-bar eq-bar-1" style="transform-origin:-48px 46px"><rect x="-52" y="10" width="8" height="36" rx="2" fill="rgba(125,211,252,0.5)" /></g>
+              <g class="eq-bar eq-bar-2" style="transform-origin:-34px 46px"><rect x="-38" y="-8" width="8" height="54" rx="2" fill="rgba(125,211,252,0.6)" /></g>
+              <g class="eq-bar eq-bar-3" style="transform-origin:-20px 46px"><rect x="-24" y="-26" width="8" height="72" rx="2" fill="#7dd3fc" opacity="0.75" /></g>
+              <g class="eq-bar eq-bar-4" style="transform-origin:-6px 46px"><rect x="-10" y="-42" width="8" height="88" rx="2" fill="#7dd3fc" opacity="0.9" /></g>
+              <g class="eq-bar eq-bar-5" style="transform-origin:8px 46px"><rect x="4" y="-34" width="8" height="80" rx="2" fill="#7dd3fc" opacity="0.8" /></g>
+              <g class="eq-bar eq-bar-6" style="transform-origin:22px 46px"><rect x="18" y="-18" width="8" height="64" rx="2" fill="rgba(125,211,252,0.65)" /></g>
+              <g class="eq-bar eq-bar-7" style="transform-origin:36px 46px"><rect x="32" y="2" width="8" height="44" rx="2" fill="rgba(125,211,252,0.55)" /></g>
+              <g class="eq-bar eq-bar-8" style="transform-origin:50px 46px"><rect x="46" y="16" width="8" height="30" rx="2" fill="rgba(125,211,252,0.4)" /></g>
+            </g>
+            <!-- Threshold line -->
+            <line x1="-56" y1="-20" x2="58" y2="-20" stroke="rgba(249,115,22,0.5)" stroke-width="1" stroke-dasharray="6 4" />
+            <!-- Grid lines -->
+            <line x1="-56" y1="46" x2="58" y2="46" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+            <line x1="-56" y1="10" x2="58" y2="10" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+            <!-- Corner brackets -->
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </g>
+
+          <!-- ═══ HUD PANEL 3 (right) — Targeting reticle ═══ -->
+          <g data-hud-plane transform="translate(460, 240)">
+            <rect x="-75" y="-75" width="150" height="150" rx="12" fill="rgba(8,18,38,0.85)" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <!-- Hexagonal reticle -->
+            <polygon class="reticle-outer" points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="none" stroke="rgba(125,211,252,0.2)" stroke-width="1" />
+            <polygon class="reticle-inner" points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="none" stroke="rgba(125,211,252,0.3)" stroke-width="1" />
+            <!-- Inner diamond target -->
+            <polygon class="reticle-diamond" points="0,-16 16,0 0,16 -16,0" fill="rgba(249,115,22,0.15)" stroke="rgba(249,115,22,0.6)" stroke-width="1.2" />
+            <!-- Tick marks -->
+            <g class="reticle-ticks" stroke="rgba(125,211,252,0.35)" stroke-width="1">
+              <line x1="0" y1="-54" x2="0" y2="-46" />
+              <line x1="0" y1="46" x2="0" y2="54" />
+              <line x1="-54" y1="0" x2="-46" y2="0" />
+              <line x1="46" y1="0" x2="54" y2="0" />
+            </g>
+            <!-- Diagonal scan lines -->
+            <line x1="-40" y1="-40" x2="-28" y2="-28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="40" y1="-40" x2="28" y2="-28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="-40" y1="40" x2="-28" y2="28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <line x1="40" y1="40" x2="28" y2="28" stroke="rgba(125,211,252,0.15)" stroke-width="0.8" />
+            <!-- Center dot -->
+            <circle class="reticle-dot" cx="0" cy="0" r="3" fill="#f97316" opacity="0.9" />
+            <circle class="reticle-halo" cx="0" cy="0" r="6" fill="none" stroke="rgba(249,115,22,0.4)" stroke-width="0.8" />
+            <!-- Corner brackets -->
+            <g stroke="rgba(125,211,252,0.35)" stroke-width="1.2" stroke-linecap="round">
+              <path d="M-66 -58 L-66 -66 L-58 -66" />
+              <path d="M58 -66 L66 -66 L66 -58" />
+              <path d="M66 58 L66 66 L58 66" />
+              <path d="M-58 66 L-66 66 L-66 58" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-shell {
+    isolation: isolate;
+  }
+
+  /* Title gradient — white through orange into cyan */
+  .hero-title-main {
+    background: linear-gradient(135deg, #ffffff 0%, #fb923c 38%, #f97316 52%, #7dd3fc 78%, #c8deff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ── Primary CTA ── */
+  .hero-cta-primary {
+    box-shadow:
+      0 0 20px rgba(125, 211, 252, 0.25),
+      0 0 60px rgba(125, 211, 252, 0.08);
+  }
+  .hero-cta-primary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+      0 0 28px rgba(125, 211, 252, 0.4),
+      0 0 80px rgba(125, 211, 252, 0.15),
+      0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  .hero-cta-primary:active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow:
+      0 0 12px rgba(125, 211, 252, 0.3),
+      0 0 40px rgba(125, 211, 252, 0.1);
+    transition-duration: 100ms;
+  }
+
+  /* Shine sweep on hover */
+  .hero-cta-shine {
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: none;
+  }
+  .hero-cta-primary:hover .hero-cta-shine {
+    transform: translateX(120%);
+    transition: transform 0.6s ease;
+  }
+
+  /* Glass badge glow */
+  .glass-badge {
+    box-shadow:
+      0 0 20px rgba(125, 211, 252, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* Radar sweep rotation */
+  .hud-radar-sweep {
+    transform-origin: 0 0;
+    animation: radarSpin 4s linear infinite;
+  }
+
+  @keyframes radarSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── EQ Visualizer bars ── */
+  .eq-bar {
+    animation: eqBounce 1.2s ease-in-out infinite alternate;
+  }
+  .eq-bar-1 { animation-delay: 0s; animation-duration: 0.9s; }
+  .eq-bar-2 { animation-delay: 0.15s; animation-duration: 1.1s; }
+  .eq-bar-3 { animation-delay: 0.05s; animation-duration: 0.8s; }
+  .eq-bar-4 { animation-delay: 0.2s; animation-duration: 1.3s; }
+  .eq-bar-5 { animation-delay: 0.1s; animation-duration: 1.0s; }
+  .eq-bar-6 { animation-delay: 0.25s; animation-duration: 0.85s; }
+  .eq-bar-7 { animation-delay: 0.08s; animation-duration: 1.15s; }
+  .eq-bar-8 { animation-delay: 0.18s; animation-duration: 0.95s; }
+
+  @keyframes eqBounce {
+    0%   { transform: scaleY(1); }
+    100% { transform: scaleY(0.3); }
+  }
+
+  /* ── Targeting reticle pulse ── */
+  .reticle-outer {
+    transform-origin: center;
+    animation: reticlePulseOuter 3s ease-in-out infinite;
+  }
+  .reticle-inner {
+    transform-origin: center;
+    animation: reticlePulseInner 2.4s ease-in-out infinite;
+  }
+  .reticle-diamond {
+    transform-origin: center;
+    animation: diamondPulse 2s ease-in-out infinite;
+  }
+  .reticle-dot {
+    animation: dotGlow 1.6s ease-in-out infinite;
+  }
+  .reticle-halo {
+    transform-origin: center;
+    animation: haloExpand 2s ease-in-out infinite;
+  }
+  .reticle-ticks {
+    animation: tickFlash 3s ease-in-out infinite;
+  }
+
+  @keyframes reticlePulseOuter {
+    0%, 100% { stroke-opacity: 0.2; transform: scale(1); }
+    50%      { stroke-opacity: 0.45; transform: scale(1.04); }
+  }
+  @keyframes reticlePulseInner {
+    0%, 100% { stroke-opacity: 0.3; transform: scale(1); }
+    50%      { stroke-opacity: 0.6; transform: scale(1.06); }
+  }
+  @keyframes diamondPulse {
+    0%, 100% { transform: scale(1); fill-opacity: 0.15; stroke-opacity: 0.6; }
+    50%      { transform: scale(1.1); fill-opacity: 0.3; stroke-opacity: 1; }
+  }
+  @keyframes dotGlow {
+    0%, 100% { opacity: 0.9; r: 3; }
+    50%      { opacity: 1; r: 4.5; }
+  }
+  @keyframes haloExpand {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50%      { transform: scale(1.5); opacity: 0.15; }
+  }
+  @keyframes tickFlash {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 0.7; }
+  }
+</style>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Shield -->
+  <path d="M32 4L8 16v18c0 14.4 10.24 27.84 24 32 13.76-4.16 24-17.6 24-32V16L32 4z" fill="#0d1328" stroke="#7dd3fc" stroke-opacity="0.35" stroke-width="1.5"/>
+  <!-- Lock body -->
+  <rect x="24" y="30" width="16" height="14" rx="2.5" fill="#7dd3fc" fill-opacity="0.2"/>
+  <!-- Lock shackle -->
+  <path d="M26 30v-5a6 6 0 0 1 12 0v5" stroke="#7dd3fc" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Keyhole -->
+  <circle cx="32" cy="35.5" r="2.5" fill="#050816"/>
+  <path d="M30.8 36.5L32 42l1.2-5.5" fill="#050816"/>
+  <circle cx="32" cy="35.5" r="1" fill="#7dd3fc"/>
+</svg>

@@ -1,0 +1,27 @@
+---
+import PageMotion from "../components/animations/PageMotion.astro";
+import Navbar from "../components/Navbar.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import AuthoritySection from "../components/sections/AuthoritySection.astro";
+import HowItWorksSection from "../components/sections/HowItWorksSection.astro";
+import WhatYouGetSection from "../components/sections/WhatYouGetSection.astro";
+import PricingSection from "../components/sections/PricingSection.astro";
+import CtaSection from "../components/sections/CtaSection.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { brandingConfig } from "../config/branding";
+---
+
+<BaseLayout title={brandingConfig.siteName} description={brandingConfig.description}>
+  <PageMotion />
+  <Navbar />
+  <main>
+    <HeroSection />
+    <AuthoritySection />
+    <HowItWorksSection />
+    <WhatYouGetSection />
+    <PricingSection />
+    <CtaSection />
+  </main>
+  <Footer />
+</BaseLayout>
