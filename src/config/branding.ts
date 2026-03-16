@@ -4,5 +4,5 @@ export const brandingConfig = {
   description:
     "Championship defensive mastery inspired by Metta World Peace, powered by next-generation performance technology.",
   socialHandle: "@lockdownacademy",
-  contactEmail: "hello@lockdownacademy.com"
+  contactEmail: "admin@omnicorex.com"
 } as const;
